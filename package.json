@@ -7,10 +7,8 @@
     "clean": "shx rm -rf ./dist",
     "create:dist": "shx mkdir -p ./dist/public/js",
     "build:client": "webpack --mode='production'",
-    "build:server": "babel ./src/server --out-dir ./dist",
     "copy:assets": "shx cp -r ./assets/. ./dist/public",
-    "build": "run-s clean create:dist build:* copy:assets",
-    "start": "node ./dist/index.js",
+    "build": "run-s clean create:dist build:client copy:assets",
     "test": "jest .",
     "lint": "eslint ./src/ --ext .js,.jsx"
   },
